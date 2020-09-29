@@ -1,2 +1,25 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h2 class="subtitle is-3">Top 100 Movies</h2>
+
+<table class="ml-5">
+  <tbody>
+  <th>Title</th>
+  <th>Year</th>
+  <th>Duration</th>
+  <th>Description</th>
+  <th>Production Company</th>
+  <th>Average Votes</th>
+
+    <% @movies.each do |movie| %>
+
+    <tr>
+      <td><li><%= link_to movie.title, movie %></li></td>
+      <td><%= movie.year %>-</td>
+      <td><%= movie.duration %></td>
+      <td><%= movie.description %></td>
+      <td><%= movie.production_company.name %></td>
+      <td><%= movie.average_vote %></td>
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>

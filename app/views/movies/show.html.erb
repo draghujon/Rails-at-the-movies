@@ -1,2 +1,12 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<h2 class="title is-2"><%= @movie.title %></h2>
+
+<!-- List the other information we have about a movie, along with its production company(link_to)-->
+
+<ul>
+
+    <li><%= @movie.description %></li>
+    <li>Year <%= @movie.year %></li>
+    <li>Duration <%= @movie.duration %> mins</li>
+    <li>Production Company <%= link_to @movie.production_company.name, @production_company_path %></li>
+    <li>Average Vote <%= @movie.average_vote %></li>
+</ul>
