@@ -3,10 +3,14 @@
 <!-- List the other information we have about a movie, along with its production company(link_to)-->
 
 <ul>
-
+    <h4 class="subtitle is-3">Description: </h4>
     <li><%= @movie.description %></li>
-    <li>Year <%= @movie.year %></li>
-    <li>Duration <%= @movie.duration %> mins</li>
-    <li>Production Company <%= link_to @movie.production_company.name, @production_company_path %></li>
-    <li>Average Vote <%= @movie.average_vote %></li>
+    <li>Year: <%= @movie.year %></li>
+    <li>Duration: <%= @movie.duration %> mins</li>
+    <li>Production Company: <%= link_to @movie.production_company.name, @movie.production_company %></li>
+    <li>Average Vote: <%= @movie.average_vote %></li>
+
+    <progress class="progress is-info" value="<%= @movie.average_vote %>" max=10>
+      <%= @movie.average_vote %>
+    </progress>
 </ul>
